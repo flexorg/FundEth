@@ -40,6 +40,13 @@ A project will essentially be creating a contract wallet with which users can do
 
 ## Wireframes
 
+### Splash Page
+
+### Projects Index
+
+### Project Show
+
+### Project Form
 
 
 ## Technologies and Technical Challenges
