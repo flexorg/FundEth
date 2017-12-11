@@ -28,6 +28,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "dependencies": {
+    "ganache-cli": "^6.0.3",
     "testrpc": "0.0.1",
     "truffle": "^4.0.1"
   }
