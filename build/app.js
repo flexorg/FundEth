@@ -28064,9 +28064,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // Import our contract artifacts and turn them into usable abstractions.
 
-
-
-
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
