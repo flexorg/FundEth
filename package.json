@@ -2,7 +2,7 @@
   "name": "webpack-app",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/app.jsx",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server",
     "prebuild": "rimraf dist",
@@ -25,7 +25,7 @@
     "style-loader": "0.13.1",
     "webpack": "1.13.2",
     "webpack-dashboard": "0.2.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "ganache-cli": "^6.0.3",
