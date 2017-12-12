@@ -5,21 +5,25 @@ import "github.com/ethereum/solidity/std/mortal.sol";
 contract Projects is mortal {
 
   struct Project {
-    address address;
+    address addr;
     string name;
     string imageUrl;
     string description;
     uint funding;
+    bool valid;
   }
 
-  address[] public projectAddresses;
-  uint public totalProjects
+  Project[] public projects;
+  uint public totalProjects;
 
-  event NewProject(address address, string name, string imageUrl, string description)
-  event NewDonation(address address, uint amt)
+  event NewProject(address addr, string name, string imageUrl, string description, bool valid);
+  event NewDonation(address addrFrom, address addrTo, uint amt);
 
-  function createProject(address address, string name, string imageUrl) payable public {
-
+  function CreateProject(address addr, string name,string description, string imageUrl) payable public {
+    projects.push(addr, name, imageUrl,description, true)
+    NewProject(addr, name, imageUrl,description, true);
   }
 
+  function DonateToProject(address sender, address receiver, uint amt) payable public {
+  }
 }
