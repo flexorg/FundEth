@@ -42,7 +42,7 @@ contract FundEth is mortal {
     totalProjects++;
   }
 
-  function DonateToProject(address sender, address receiver, uint amt) payable public {
-    receiver.send(amt);
+  function DonateToProject(address receiver, uint amt) payable public {
+    receiver.transfer(amt);
   }
 }
