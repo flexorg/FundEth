@@ -40,7 +40,21 @@ A project will essentially be creating a contract wallet with which users can do
 
 ## Wireframes
 
+### Splash Page
 
+![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Splash%20Page.png "Splash Page")
+
+### Projects Index
+
+![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Projects%20Index.png "Projects Index")
+
+### Project Show
+
+![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Project%20Show.png "Project Show")
+
+### Project Form
+
+![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Project%20Form.png "Project Form")
 
 ## Technologies and Technical Challenges
 
