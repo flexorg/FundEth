@@ -1,4 +1,3 @@
-
 // Import libraries we need.
 import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract'
@@ -17,6 +16,6 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"));
   }
 
-
+  console.log(web3);
 
 });
