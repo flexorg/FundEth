@@ -81,15 +81,13 @@ window.addEventListener('load', function() {
 
   App.start();
 
-  // window.testStart = function () {
-  //   App.createProject("test", "I am a test", "google.com");
-  // };
-  //
-  // window.projects = {};
-  //
-  // window.testGet = function () {
-  //   for (var i = 1; i < 100; i++) {
-  //     App.getProject(i);
-  //   }
-  // };
+  window.testStart = function () {
+    App.createProject("test", "I am a test", "google.com");
+  };
+
+  window.projects = {};
+
+  window.testGet = function () {
+    App.getProject(3);
+  };
 });
