@@ -38,13 +38,34 @@ window.App = {
     });
   },
 
-  deploy: function(){
-
+  createProject: function(name, description, imageUrl){
     FundEth.deployed().then((instance) => {
-      console.log(instance);
+      let fundEthInstance = instance;
+      fundEthInstance.CreateProject(name, description, imageUrl, {from: account});
+    });
+  },
+
+
+  getProject: function(id){
+    FundEth.deployed().then((instance) => {
+      let fundEthInstance = instance;
+      fundEthInstance.getProject(id, {from: account}).then( project => {
+        if (project[0] !== "0x0000000000000000000000000000000000000000") {
+          window.projects[id] = {
+            id: id,
+            address: project[0],
+            name: project[1],
+            image_url: project[2],
+            description: project[3],
+            amt_raised: project[4].toNumber()
+          };
+        }
+      });
     });
   }
 };
+
+//null account = "0x0000000000000000000000000000000000000000"
 
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
@@ -59,7 +80,14 @@ window.addEventListener('load', function() {
   }
 
   App.start();
-  console.log(web3.eth);
-  App.deploy();
 
+  window.testStart = function () {
+    App.createProject("test", "I am a test", "google.com");
+  };
+
+  window.projects = {};
+
+  window.testGet = function () {
+    App.getProject(3);
+  };
 });
