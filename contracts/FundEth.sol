@@ -22,6 +22,9 @@ contract mortal is owned {
     }
   }
 
+
+
+
 contract FundEth is mortal {
 
   struct Project {
@@ -29,18 +32,32 @@ contract FundEth is mortal {
     string name;
     string imageUrl;
     string description;
-    bool valid;
+    uint amt;
   }
 
-  Project[] public projects;
+  event ProjectNumber(uint _value);
+
+
+  mapping ( uint => Project ) projects;
   uint public totalProjects;
-
-
+  uint[] public projectIds;
 
   function CreateProject(string name,string description, string imageUrl) payable public {
-    projects.push(Project({addr: msg.sender, name: name, imageUrl: imageUrl, description: description, valid: true}));
     totalProjects++;
+    var project = projects[totalProjects];
+    projectIds.push(totalProjects);
+
+    project.addr = msg.sender;
+    project.name = name;
+    project.description = description;
+    project.imageUrl = imageUrl;
+    project.amt = 0;
   }
+
+  function getProject(uint projectId) view public returns (address, string, string, string, uint){
+    return (projects[projectId].addr, projects[projectId].name, projects[projectId].imageUrl, projects[projectId].description, projects[projectId].amt );
+  }
+
 
   function DonateToProject(address receiver, uint amt) payable public {
     receiver.transfer(amt);
