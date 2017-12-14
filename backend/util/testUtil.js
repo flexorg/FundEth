@@ -40,6 +40,7 @@ const deployInstance = () => {
 
 const deployPromise = async (id) => {
   var instance = await deployInstance();
+  // This is the same as doing deployInstance().then(instance => {instance.getProject...})
 
   return instance.getProject(id, { from: account });
 };
@@ -58,6 +59,9 @@ export const getProject = async (id) => {
     return pojo;
   }
 };
+
+//null account = "0x0000000000000000000000000000000000000000"
+
 
 const fetchProjects = () => {
   for (var i = 1; i < 20; i++) {
