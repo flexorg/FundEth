@@ -49,6 +49,7 @@ window.App = {
   getProject: function(id){
     FundEth.deployed().then((instance) => {
       let fundEthInstance = instance;
+      console.log(fundEthInstance);
       fundEthInstance.getProject(id, {from: account}).then( project => {
         if (project[0] !== "0x0000000000000000000000000000000000000000") {
           window.projects[id] = {
@@ -59,6 +60,15 @@ window.App = {
             description: project[3],
             amt_raised: project[4].toNumber()
           };
+          // var pojo = {
+          //   id: id,
+          //   address: project[0],
+          //   name: project[1],
+          //   image_url: project[2],
+          //   description: project[3],
+          //   amt_raised: project[4].toNumber()
+          // }
+          // return pojo;
         }
       });
     });
@@ -93,7 +103,7 @@ window.addEventListener('load', function() {
     App.getProject(3);
   };
 
-  console.log(FundEth);
+  // console.log(FundEth);
 
   window.createProject = Web3Util.createProject;
   window.getProjects = Web3Util.getProjects;

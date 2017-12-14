@@ -23,7 +23,7 @@ export const getProjects = () => {
 export const getProject = (id) => {
   let project = {};
 
-  App.getProject(id);
+  var test = App.getProject(id);
   if (window.projects[id]) {
     project[id] = window.projects[id];
   }
