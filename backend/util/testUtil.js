@@ -60,14 +60,12 @@ export const getProject = async (id) => {
 };
 
 export const fetchProjects = () => {
-  var i = 1;
-  while (i < 20) {
+  for (var i = 1; i < 20; i++) {
     getProject(i).then(response => {
-      projects[i] = response;
-      console.log(projects);
+      if (response) {
+        projects[response.id] = response;
+      }
     })
-
-    i++
   }
 };
 
