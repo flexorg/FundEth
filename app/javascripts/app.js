@@ -101,5 +101,5 @@ window.addEventListener('load', function() {
   ProjectUtil.start();
   window.getProject = ProjectUtil.getProject;
   window.getProjects = ProjectUtil.getProjects;
-  window.fetchProjects = ProjectUtil.fetchProjects;
+  window.createProject = ProjectUtil.createProject;
 });

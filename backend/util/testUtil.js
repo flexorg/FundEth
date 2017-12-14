@@ -59,7 +59,7 @@ export const getProject = async (id) => {
   }
 };
 
-export const fetchProjects = () => {
+const fetchProjects = () => {
   for (var i = 1; i < 20; i++) {
     getProject(i).then(response => {
       if (response) {
@@ -76,6 +76,9 @@ export const getProjects = async () => {
 };
 
 
-export const createProject = (name, description, imageUrl) => {
-  return FundEth.deployed();
+export const createProject = async (name, description, imageUrl) => {
+  var project = await deployInstance();
+
+  project.CreateProject(name, description, imageUrl, { from: account });
+  return true;
 };
