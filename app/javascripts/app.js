@@ -1,7 +1,7 @@
 // import { default as Web3} from 'web3';
 // import { default as contract } from 'truffle-contract';
 // import * as Web3Util from '../../backend/util/web3Util';
-import * as ProjectUtil from '../../backend/util/testUtil';
+import * as ProjectUtil from '../../backend/util/projectUtil';
 //
 //
 // import fundeth_artifacts from '../../build/contracts/FundEth.json';
