@@ -744,40 +744,24 @@
           },
           {
             "attributes": {
-              "constant": false,
-              "name": "ProjectNumber",
-              "scope": 187,
-              "stateVariable": true,
-              "storageLocation": "default",
-              "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-              "value": null,
-              "visibility": "internal",
-              "anonymous": false
+              "anonymous": false,
+              "name": "ProjectNumber"
             },
             "children": [
               {
-                "attributes": {
-                  "length": null,
-                  "type": "mapping(uint256 => struct FundEth.Project storage ref)"
-                },
                 "children": [
                   {
                     "attributes": {
-                      "contractScope": null,
-                      "name": "_value",
-                      "referencedDeclaration": 52,
-                      "type": "uint256",
                       "constant": false,
                       "indexed": false,
+                      "name": "_value",
                       "scope": 73,
                       "stateVariable": false,
                       "storageLocation": "default",
+                      "type": "uint256",
                       "value": null,
                       "visibility": "internal"
                     },
-                    "id": 71,
-                    "name": "VariableDeclaration",
-                    "src": "567:11:1",
                     "children": [
                       {
                         "attributes": {
@@ -788,18 +772,10 @@
                         "name": "ElementaryTypeName",
                         "src": "567:4:1"
                       }
-                    ]
-                  },
-                  {
-                    "attributes": {
-                      "contractScope": null,
-                      "name": "Project",
-                      "referencedDeclaration": 52,
-                      "type": "struct FundEth.Project storage pointer"
-                    },
-                    "id": 54,
-                    "name": "UserDefinedTypeName",
-                    "src": "529:7:0"
+                    ],
+                    "id": 71,
+                    "name": "VariableDeclaration",
+                    "src": "567:11:1"
                   }
                 ],
                 "id": 72,
@@ -825,12 +801,8 @@
             "children": [
               {
                 "attributes": {
-                  "name": "uint",
                   "type": "mapping(uint256 => struct FundEth.Project storage ref)"
                 },
-                "id": 76,
-                "name": "Mapping",
-                "src": "588:27:1",
                 "children": [
                   {
                     "attributes": {
@@ -852,7 +824,10 @@
                     "name": "UserDefinedTypeName",
                     "src": "606:7:1"
                   }
-                ]
+                ],
+                "id": 76,
+                "name": "Mapping",
+                "src": "588:27:1"
               }
             ],
             "id": 77,
@@ -862,776 +837,23 @@
           {
             "attributes": {
               "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
               "name": "totalProjects",
-              "payable": true,
               "scope": 194,
-              "stateMutability": "payable",
-              "superFunction": null,
-              "visibility": "public",
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
-              "value": null
+              "value": null,
+              "visibility": "public"
             },
             "children": [
               {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "uint",
-                      "scope": 107,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 59,
-                        "name": "ElementaryTypeName",
-                        "src": "603:6:0"
-                      }
-                    ],
-                    "id": 59,
-                    "name": "ElementaryTypeName",
-                    "src": "580:4:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "description",
-                      "scope": 107,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 61,
-                        "name": "ElementaryTypeName",
-                        "src": "615:6:0"
-                      }
-                    ],
-                    "id": 62,
-                    "name": "VariableDeclaration",
-                    "src": "615:18:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "imageUrl",
-                      "scope": 107,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 63,
-                        "name": "ElementaryTypeName",
-                        "src": "635:6:0"
-                      }
-                    ],
-                    "id": 64,
-                    "name": "VariableDeclaration",
-                    "src": "635:15:0"
-                  }
-                ],
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
                 "id": 78,
                 "name": "ElementaryTypeName",
-                "src": "629:4:1",
-                "attributes": {
-                  "length": null,
-                  "type": "uint256",
-                  "name": "uint"
-                }
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 66,
-                "name": "ParameterList",
-                "src": "667:0:0"
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256",
-                          "type_conversion": false,
-                          "operator": "++",
-                          "prefix": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "push",
-                              "referencedDeclaration": 58,
-                              "type": "uint256",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "value": "totalProjects"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 55,
-                                  "type": "struct FundEth.Project storage ref[] storage ref",
-                                  "value": "projects"
-                                },
-                                "id": 66,
-                                "name": "Identifier",
-                                "src": "663:8:0"
-                              }
-                            ],
-                            "id": 67,
-                            "name": "Identifier",
-                            "src": "673:13:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "isStructConstructorCall": true,
-                              "lValueRequested": false,
-                              "names": [
-                                "addr",
-                                "name",
-                                "imageUrl",
-                                "description",
-                                "valid"
-                              ],
-                              "type": "struct FundEth.Project memory",
-                              "type_conversion": false
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 52,
-                                  "type": "type(struct FundEth.Project storage pointer)",
-                                  "value": "Project"
-                                },
-                                "id": 69,
-                                "name": "Identifier",
-                                "src": "677:7:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "member_name": "sender",
-                                  "referencedDeclaration": null,
-                                  "type": "address"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 110,
-                                      "type": "msg",
-                                      "value": "msg"
-                                    },
-                                    "id": 70,
-                                    "name": "Identifier",
-                                    "src": "692:3:0"
-                                  }
-                                ],
-                                "id": 71,
-                                "name": "MemberAccess",
-                                "src": "692:10:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 59,
-                                  "type": "string memory",
-                                  "value": "name"
-                                },
-                                "id": 72,
-                                "name": "Identifier",
-                                "src": "710:4:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 63,
-                                  "type": "string memory",
-                                  "value": "imageUrl"
-                                },
-                                "id": 73,
-                                "name": "Identifier",
-                                "src": "726:8:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 61,
-                                  "type": "string memory",
-                                  "value": "description"
-                                },
-                                "id": 74,
-                                "name": "Identifier",
-                                "src": "749:11:0"
-                              },
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "hexvalue": "74727565",
-                                  "isConstant": false,
-                                  "isLValue": false,
-                                  "isPure": true,
-                                  "lValueRequested": false,
-                                  "subdenomination": null,
-                                  "token": "bool",
-                                  "type": "bool",
-                                  "value": "true"
-                                },
-                                "id": 75,
-                                "name": "Literal",
-                                "src": "769:4:0"
-                              }
-                            ],
-                            "id": 76,
-                            "name": "FunctionCall",
-                            "src": "677:98:0"
-                          }
-                        ],
-                        "id": 68,
-                        "name": "UnaryOperation",
-                        "src": "673:15:0"
-                      }
-                    ],
-                    "id": 69,
-                    "name": "ExpressionStatement",
-                    "src": "673:15:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "++",
-                          "prefix": false,
-                          "type": "struct FundEth.Project storage pointer",
-                          "constant": false,
-                          "name": "project",
-                          "scope": 107,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "typeName": null,
-                          "value": null,
-                          "visibility": "internal"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 57,
-                              "type": "uint256",
-                              "value": "totalProjects"
-                            },
-                            "id": 79,
-                            "name": "Identifier",
-                            "src": "782:13:0"
-                          }
-                        ],
-                        "id": 70,
-                        "name": "VariableDeclaration",
-                        "src": "694:11:0"
-                      },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "type": "struct FundEth.Project storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 56,
-                              "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                              "value": "projects"
-                            },
-                            "id": 71,
-                            "name": "Identifier",
-                            "src": "708:8:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 58,
-                              "type": "uint256",
-                              "value": "totalProjects"
-                            },
-                            "id": 72,
-                            "name": "Identifier",
-                            "src": "717:13:0"
-                          }
-                        ],
-                        "id": 73,
-                        "name": "IndexAccess",
-                        "src": "708:23:0"
-                      }
-                    ],
-                    "id": 74,
-                    "name": "VariableDeclarationStatement",
-                    "src": "694:37:0",
-                    "attributes": {
-                      "assignments": [
-                        70
-                      ]
-                    }
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "address"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "addr",
-                              "referencedDeclaration": 43,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 70,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 75,
-                                "name": "Identifier",
-                                "src": "738:7:0"
-                              }
-                            ],
-                            "id": 77,
-                            "name": "MemberAccess",
-                            "src": "738:12:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "sender",
-                              "referencedDeclaration": null,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 182,
-                                  "type": "msg",
-                                  "value": "msg"
-                                },
-                                "id": 78,
-                                "name": "Identifier",
-                                "src": "753:3:0"
-                              }
-                            ],
-                            "id": 79,
-                            "name": "MemberAccess",
-                            "src": "753:10:0"
-                          }
-                        ],
-                        "id": 80,
-                        "name": "Assignment",
-                        "src": "738:25:0"
-                      }
-                    ],
-                    "id": 81,
-                    "name": "ExpressionStatement",
-                    "src": "738:25:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "name",
-                              "referencedDeclaration": 45,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 70,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 82,
-                                "name": "Identifier",
-                                "src": "769:7:0"
-                              }
-                            ],
-                            "id": 84,
-                            "name": "MemberAccess",
-                            "src": "769:12:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 60,
-                              "type": "string memory",
-                              "value": "name"
-                            },
-                            "id": 85,
-                            "name": "Identifier",
-                            "src": "784:4:0"
-                          }
-                        ],
-                        "id": 86,
-                        "name": "Assignment",
-                        "src": "769:19:0"
-                      }
-                    ],
-                    "id": 87,
-                    "name": "ExpressionStatement",
-                    "src": "769:19:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "description",
-                              "referencedDeclaration": 49,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 70,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 88,
-                                "name": "Identifier",
-                                "src": "794:7:0"
-                              }
-                            ],
-                            "id": 90,
-                            "name": "MemberAccess",
-                            "src": "794:19:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 62,
-                              "type": "string memory",
-                              "value": "description"
-                            },
-                            "id": 91,
-                            "name": "Identifier",
-                            "src": "816:11:0"
-                          }
-                        ],
-                        "id": 92,
-                        "name": "Assignment",
-                        "src": "794:33:0"
-                      }
-                    ],
-                    "id": 93,
-                    "name": "ExpressionStatement",
-                    "src": "794:33:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "imageUrl",
-                              "referencedDeclaration": 47,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 70,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 94,
-                                "name": "Identifier",
-                                "src": "833:7:0"
-                              }
-                            ],
-                            "id": 96,
-                            "name": "MemberAccess",
-                            "src": "833:16:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 64,
-                              "type": "string memory",
-                              "value": "imageUrl"
-                            },
-                            "id": 97,
-                            "name": "Identifier",
-                            "src": "852:8:0"
-                          }
-                        ],
-                        "id": 98,
-                        "name": "Assignment",
-                        "src": "833:27:0"
-                      }
-                    ],
-                    "id": 99,
-                    "name": "ExpressionStatement",
-                    "src": "833:27:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "uint256"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "amt",
-                              "referencedDeclaration": 51,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 70,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 100,
-                                "name": "Identifier",
-                                "src": "866:7:0"
-                              }
-                            ],
-                            "id": 102,
-                            "name": "MemberAccess",
-                            "src": "866:11:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "hexvalue": "30",
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number",
-                              "type": "int_const 0",
-                              "value": "0"
-                            },
-                            "id": 103,
-                            "name": "Literal",
-                            "src": "880:1:0"
-                          }
-                        ],
-                        "id": 104,
-                        "name": "Assignment",
-                        "src": "866:15:0"
-                      }
-                    ],
-                    "id": 105,
-                    "name": "ExpressionStatement",
-                    "src": "866:15:0"
-                  }
-                ],
-                "id": 106,
-                "name": "Block",
-                "src": "667:219:0"
+                "src": "629:4:1"
               }
             ],
             "id": 79,
@@ -1641,1115 +863,34 @@
           {
             "attributes": {
               "constant": false,
-              "implemented": true,
-              "isConstructor": false,
-              "modifiers": [
-                null
-              ],
               "name": "projectIds",
-              "payable": true,
               "scope": 194,
-              "stateMutability": "payable",
-              "superFunction": null,
-              "visibility": "public",
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256[] storage ref",
-              "value": null
+              "value": null,
+              "visibility": "public"
             },
             "children": [
               {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "uint",
-                      "scope": 116,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 62,
-                        "name": "ElementaryTypeName",
-                        "src": "632:6:0"
-                      }
-                    ],
-                    "id": 80,
-                    "name": "ElementaryTypeName",
-                    "src": "659:4:1"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "description",
-                      "scope": 116,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 64,
-                        "name": "ElementaryTypeName",
-                        "src": "644:6:0"
-                      }
-                    ],
-                    "id": 65,
-                    "name": "VariableDeclaration",
-                    "src": "644:18:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "imageUrl",
-                      "scope": 116,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 66,
-                        "name": "ElementaryTypeName",
-                        "src": "664:6:0"
-                      }
-                    ],
-                    "id": 67,
-                    "name": "VariableDeclaration",
-                    "src": "664:15:0"
-                  }
-                ],
-                "id": 81,
-                "name": "ArrayTypeName",
-                "src": "659:6:1",
                 "attributes": {
                   "length": null,
                   "type": "uint256[] storage pointer"
-                }
-              },
-              {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
                 },
                 "children": [
                   {
                     "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 145,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
+                      "name": "uint",
+                      "type": "uint256"
                     },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 111,
-                        "name": "ElementaryTypeName",
-                        "src": "947:7:0"
-                      }
-                    ],
-                    "id": 112,
-                    "name": "VariableDeclaration",
-                    "src": "947:7:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 145,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 113,
-                        "name": "ElementaryTypeName",
-                        "src": "956:6:0"
-                      }
-                    ],
-                    "id": 114,
-                    "name": "VariableDeclaration",
-                    "src": "956:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 145,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 115,
-                        "name": "ElementaryTypeName",
-                        "src": "964:6:0"
-                      }
-                    ],
-                    "id": 116,
-                    "name": "VariableDeclaration",
-                    "src": "964:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 145,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 117,
-                        "name": "ElementaryTypeName",
-                        "src": "972:6:0"
-                      }
-                    ],
-                    "id": 118,
-                    "name": "VariableDeclaration",
-                    "src": "972:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 145,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 119,
-                        "name": "ElementaryTypeName",
-                        "src": "980:4:0"
-                      }
-                    ],
-                    "id": 120,
-                    "name": "VariableDeclaration",
-                    "src": "980:4:0"
+                    "id": 80,
+                    "name": "ElementaryTypeName",
+                    "src": "659:4:1"
                   }
                 ],
-                "id": 69,
-                "name": "ParameterList",
-                "src": "696:0:0"
-              },
-              {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256",
-                          "type_conversion": false,
-                          "isInlineArray": false,
-                          "operator": "++",
-                          "prefix": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "addr",
-                              "referencedDeclaration": 58,
-                              "type": "uint256",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "value": "totalProjects"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 85,
-                                  "type": "struct FundEth.Project storage ref",
-                                  "value": "receiver",
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false
-                                },
-                                "id": 124,
-                                "name": "IndexAccess",
-                                "src": "999:19:0",
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 122,
-                                    "name": "Identifier",
-                                    "src": "999:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 109,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 123,
-                                    "name": "Identifier",
-                                    "src": "1008:9:0"
-                                  }
-                                ]
-                              }
-                            ],
-                            "id": 70,
-                            "name": "Identifier",
-                            "src": "702:13:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 45,
-                              "type": "string storage ref",
-                              "value": "amt",
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "name"
-                            },
-                            "id": 129,
-                            "name": "MemberAccess",
-                            "src": "1025:24:0",
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 126,
-                                    "name": "Identifier",
-                                    "src": "1025:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 109,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 127,
-                                    "name": "Identifier",
-                                    "src": "1034:9:0"
-                                  }
-                                ],
-                                "id": 128,
-                                "name": "IndexAccess",
-                                "src": "1025:19:0"
-                              }
-                            ]
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "imageUrl",
-                              "referencedDeclaration": 47,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 130,
-                                    "name": "Identifier",
-                                    "src": "1051:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 109,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 131,
-                                    "name": "Identifier",
-                                    "src": "1060:9:0"
-                                  }
-                                ],
-                                "id": 132,
-                                "name": "IndexAccess",
-                                "src": "1051:19:0"
-                              }
-                            ],
-                            "id": 133,
-                            "name": "MemberAccess",
-                            "src": "1051:28:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "description",
-                              "referencedDeclaration": 49,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 134,
-                                    "name": "Identifier",
-                                    "src": "1081:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 109,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 135,
-                                    "name": "Identifier",
-                                    "src": "1090:9:0"
-                                  }
-                                ],
-                                "id": 136,
-                                "name": "IndexAccess",
-                                "src": "1081:19:0"
-                              }
-                            ],
-                            "id": 137,
-                            "name": "MemberAccess",
-                            "src": "1081:31:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "amt",
-                              "referencedDeclaration": 51,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 138,
-                                    "name": "Identifier",
-                                    "src": "1114:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 109,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 139,
-                                    "name": "Identifier",
-                                    "src": "1123:9:0"
-                                  }
-                                ],
-                                "id": 140,
-                                "name": "IndexAccess",
-                                "src": "1114:19:0"
-                              }
-                            ],
-                            "id": 141,
-                            "name": "MemberAccess",
-                            "src": "1114:23:0"
-                          }
-                        ],
-                        "id": 71,
-                        "name": "UnaryOperation",
-                        "src": "702:15:0"
-                      }
-                    ],
-                    "id": 72,
-                    "name": "ExpressionStatement",
-                    "src": "702:15:0",
-                    "attributes": {
-                      "functionReturnParameters": 121
-                    }
-                  },
-                  {
-                    "attributes": {
-                      "assignments": [
-                        73
-                      ]
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "constant": false,
-                          "name": "project",
-                          "scope": 116,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "type": "struct FundEth.Project storage pointer",
-                          "typeName": null,
-                          "value": null,
-                          "visibility": "internal"
-                        },
-                        "children": [],
-                        "id": 73,
-                        "name": "VariableDeclaration",
-                        "src": "723:11:0"
-                      },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": true,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "type": "struct FundEth.Project storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 56,
-                              "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                              "value": "projects"
-                            },
-                            "id": 74,
-                            "name": "Identifier",
-                            "src": "737:8:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 58,
-                              "type": "uint256",
-                              "value": "totalProjects"
-                            },
-                            "id": 75,
-                            "name": "Identifier",
-                            "src": "746:13:0"
-                          }
-                        ],
-                        "id": 76,
-                        "name": "IndexAccess",
-                        "src": "737:23:0"
-                      }
-                    ],
-                    "id": 77,
-                    "name": "VariableDeclarationStatement",
-                    "src": "723:37:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                }
-                              ],
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "push",
-                              "referencedDeclaration": null,
-                              "type": "function (uint256) returns (uint256)"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 61,
-                                  "type": "uint256[] storage ref",
-                                  "value": "projectIds"
-                                },
-                                "id": 78,
-                                "name": "Identifier",
-                                "src": "766:10:0"
-                              }
-                            ],
-                            "id": 80,
-                            "name": "MemberAccess",
-                            "src": "766:15:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 58,
-                              "type": "uint256",
-                              "value": "totalProjects"
-                            },
-                            "id": 81,
-                            "name": "Identifier",
-                            "src": "782:13:0"
-                          }
-                        ],
-                        "id": 82,
-                        "name": "FunctionCall",
-                        "src": "766:30:0"
-                      }
-                    ],
-                    "id": 83,
-                    "name": "ExpressionStatement",
-                    "src": "766:30:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "address"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "addr",
-                              "referencedDeclaration": 43,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 73,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 84,
-                                "name": "Identifier",
-                                "src": "803:7:0"
-                              }
-                            ],
-                            "id": 86,
-                            "name": "MemberAccess",
-                            "src": "803:12:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "sender",
-                              "referencedDeclaration": null,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 199,
-                                  "type": "msg",
-                                  "value": "msg"
-                                },
-                                "id": 87,
-                                "name": "Identifier",
-                                "src": "818:3:0"
-                              }
-                            ],
-                            "id": 88,
-                            "name": "MemberAccess",
-                            "src": "818:10:0"
-                          }
-                        ],
-                        "id": 89,
-                        "name": "Assignment",
-                        "src": "803:25:0"
-                      }
-                    ],
-                    "id": 90,
-                    "name": "ExpressionStatement",
-                    "src": "803:25:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "name",
-                              "referencedDeclaration": 45,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 73,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 91,
-                                "name": "Identifier",
-                                "src": "834:7:0"
-                              }
-                            ],
-                            "id": 93,
-                            "name": "MemberAccess",
-                            "src": "834:12:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 63,
-                              "type": "string memory",
-                              "value": "name"
-                            },
-                            "id": 94,
-                            "name": "Identifier",
-                            "src": "849:4:0"
-                          }
-                        ],
-                        "id": 95,
-                        "name": "Assignment",
-                        "src": "834:19:0"
-                      }
-                    ],
-                    "id": 96,
-                    "name": "ExpressionStatement",
-                    "src": "834:19:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "description",
-                              "referencedDeclaration": 49,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 73,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 97,
-                                "name": "Identifier",
-                                "src": "859:7:0"
-                              }
-                            ],
-                            "id": 99,
-                            "name": "MemberAccess",
-                            "src": "859:19:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 65,
-                              "type": "string memory",
-                              "value": "description"
-                            },
-                            "id": 100,
-                            "name": "Identifier",
-                            "src": "881:11:0"
-                          }
-                        ],
-                        "id": 101,
-                        "name": "Assignment",
-                        "src": "859:33:0"
-                      }
-                    ],
-                    "id": 102,
-                    "name": "ExpressionStatement",
-                    "src": "859:33:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "string storage ref"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "imageUrl",
-                              "referencedDeclaration": 47,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 73,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 103,
-                                "name": "Identifier",
-                                "src": "898:7:0"
-                              }
-                            ],
-                            "id": 105,
-                            "name": "MemberAccess",
-                            "src": "898:16:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 67,
-                              "type": "string memory",
-                              "value": "imageUrl"
-                            },
-                            "id": 106,
-                            "name": "Identifier",
-                            "src": "917:8:0"
-                          }
-                        ],
-                        "id": 107,
-                        "name": "Assignment",
-                        "src": "898:27:0"
-                      }
-                    ],
-                    "id": 108,
-                    "name": "ExpressionStatement",
-                    "src": "898:27:0"
-                  },
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "operator": "=",
-                          "type": "uint256"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": true,
-                              "member_name": "amt",
-                              "referencedDeclaration": 51,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 73,
-                                  "type": "struct FundEth.Project storage pointer",
-                                  "value": "project"
-                                },
-                                "id": 109,
-                                "name": "Identifier",
-                                "src": "931:7:0"
-                              }
-                            ],
-                            "id": 111,
-                            "name": "MemberAccess",
-                            "src": "931:11:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "hexvalue": "30",
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number",
-                              "type": "int_const 0",
-                              "value": "0"
-                            },
-                            "id": 112,
-                            "name": "Literal",
-                            "src": "945:1:0"
-                          }
-                        ],
-                        "id": 113,
-                        "name": "Assignment",
-                        "src": "931:15:0"
-                      }
-                    ],
-                    "id": 114,
-                    "name": "ExpressionStatement",
-                    "src": "931:15:0"
-                  }
-                ],
-                "id": 115,
-                "name": "Block",
-                "src": "696:255:0"
+                "id": 81,
+                "name": "ArrayTypeName",
+                "src": "659:6:1"
               }
             ],
             "id": 82,
@@ -2855,12 +996,7 @@
                 ],
                 "id": 89,
                 "name": "ParameterList",
-                "src": "712:49:1",
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                }
+                "src": "712:49:1"
               },
               {
                 "attributes": {
@@ -2868,138 +1004,7 @@
                     null
                   ]
                 },
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 154,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 120,
-                        "name": "ElementaryTypeName",
-                        "src": "1012:7:0"
-                      }
-                    ],
-                    "id": 121,
-                    "name": "VariableDeclaration",
-                    "src": "1012:7:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 154,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 122,
-                        "name": "ElementaryTypeName",
-                        "src": "1021:6:0"
-                      }
-                    ],
-                    "id": 123,
-                    "name": "VariableDeclaration",
-                    "src": "1021:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 154,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 124,
-                        "name": "ElementaryTypeName",
-                        "src": "1029:6:0"
-                      }
-                    ],
-                    "id": 125,
-                    "name": "VariableDeclaration",
-                    "src": "1029:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 154,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "string memory",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "string",
-                          "type": "string storage pointer"
-                        },
-                        "id": 126,
-                        "name": "ElementaryTypeName",
-                        "src": "1037:6:0"
-                      }
-                    ],
-                    "id": 127,
-                    "name": "VariableDeclaration",
-                    "src": "1037:6:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "",
-                      "scope": 154,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 128,
-                        "name": "ElementaryTypeName",
-                        "src": "1045:4:0"
-                      }
-                    ],
-                    "id": 129,
-                    "name": "VariableDeclaration",
-                    "src": "1045:4:0"
-                  }
-                ],
+                "children": [],
                 "id": 90,
                 "name": "ParameterList",
                 "src": "777:0:1"
@@ -3014,335 +1019,25 @@
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
-                          "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "uint256",
-                          "type_conversion": false,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 58,
-                          "value": "totalProjects",
-                          "isInlineArray": false,
                           "operator": "++",
-                          "prefix": false
+                          "prefix": false,
+                          "type": "uint256"
                         },
                         "children": [
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "addr",
-                              "referencedDeclaration": 79,
-                              "type": "uint256",
                               "overloadedDeclarations": [
                                 null
                               ],
+                              "referencedDeclaration": 79,
+                              "type": "uint256",
                               "value": "totalProjects"
                             },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 147,
-                                  "type": "struct FundEth.Project storage ref",
-                                  "value": "receiver",
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false
-                                },
-                                "id": 133,
-                                "name": "IndexAccess",
-                                "src": "1064:19:0",
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 131,
-                                    "name": "Identifier",
-                                    "src": "1064:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 118,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 132,
-                                    "name": "Identifier",
-                                    "src": "1073:9:0"
-                                  }
-                                ]
-                              }
-                            ],
                             "id": 91,
                             "name": "Identifier",
                             "src": "784:13:1"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 45,
-                              "type": "string storage ref",
-                              "value": "amt",
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "name"
-                            },
-                            "id": 138,
-                            "name": "MemberAccess",
-                            "src": "1090:24:0",
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 135,
-                                    "name": "Identifier",
-                                    "src": "1090:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 118,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 136,
-                                    "name": "Identifier",
-                                    "src": "1099:9:0"
-                                  }
-                                ],
-                                "id": 137,
-                                "name": "IndexAccess",
-                                "src": "1090:19:0"
-                              }
-                            ]
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "imageUrl",
-                              "referencedDeclaration": 47,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 139,
-                                    "name": "Identifier",
-                                    "src": "1116:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 118,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 140,
-                                    "name": "Identifier",
-                                    "src": "1125:9:0"
-                                  }
-                                ],
-                                "id": 141,
-                                "name": "IndexAccess",
-                                "src": "1116:19:0"
-                              }
-                            ],
-                            "id": 142,
-                            "name": "MemberAccess",
-                            "src": "1116:28:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "description",
-                              "referencedDeclaration": 49,
-                              "type": "string storage ref"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 143,
-                                    "name": "Identifier",
-                                    "src": "1146:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 118,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 144,
-                                    "name": "Identifier",
-                                    "src": "1155:9:0"
-                                  }
-                                ],
-                                "id": 145,
-                                "name": "IndexAccess",
-                                "src": "1146:19:0"
-                              }
-                            ],
-                            "id": 146,
-                            "name": "MemberAccess",
-                            "src": "1146:31:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "amt",
-                              "referencedDeclaration": 51,
-                              "type": "uint256"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "isConstant": false,
-                                  "isLValue": true,
-                                  "isPure": false,
-                                  "lValueRequested": false,
-                                  "type": "struct FundEth.Project storage ref"
-                                },
-                                "children": [
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 56,
-                                      "type": "mapping(uint256 => struct FundEth.Project storage ref)",
-                                      "value": "projects"
-                                    },
-                                    "id": 147,
-                                    "name": "Identifier",
-                                    "src": "1179:8:0"
-                                  },
-                                  {
-                                    "attributes": {
-                                      "argumentTypes": null,
-                                      "overloadedDeclarations": [
-                                        null
-                                      ],
-                                      "referencedDeclaration": 118,
-                                      "type": "uint256",
-                                      "value": "projectId"
-                                    },
-                                    "id": 148,
-                                    "name": "Identifier",
-                                    "src": "1188:9:0"
-                                  }
-                                ],
-                                "id": 149,
-                                "name": "IndexAccess",
-                                "src": "1179:19:0"
-                              }
-                            ],
-                            "id": 150,
-                            "name": "MemberAccess",
-                            "src": "1179:23:0"
                           }
                         ],
                         "id": 92,
@@ -3352,10 +1047,7 @@
                     ],
                     "id": 93,
                     "name": "ExpressionStatement",
-                    "src": "784:15:1",
-                    "attributes": {
-                      "functionReturnParameters": 130
-                    }
+                    "src": "784:15:1"
                   },
                   {
                     "attributes": {
@@ -3919,75 +1611,13 @@
                     "id": 139,
                     "name": "VariableDeclaration",
                     "src": "1068:14:1"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "projectId",
-                      "scope": 169,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 156,
-                        "name": "ElementaryTypeName",
-                        "src": "1286:4:0"
-                      }
-                    ],
-                    "id": 157,
-                    "name": "VariableDeclaration",
-                    "src": "1286:14:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "amt",
-                      "scope": 169,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 158,
-                        "name": "ElementaryTypeName",
-                        "src": "1303:4:0"
-                      }
-                    ],
-                    "id": 159,
-                    "name": "VariableDeclaration",
-                    "src": "1303:8:0"
                   }
                 ],
                 "id": 140,
                 "name": "ParameterList",
-                "src": "1067:16:1",
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                }
+                "src": "1067:16:1"
               },
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
                 "children": [
                   {
                     "attributes": {
@@ -4003,21 +1633,9 @@
                     "children": [
                       {
                         "attributes": {
-                          "length": null,
-                          "type": "address",
-                          "name": "address"
+                          "name": "address",
+                          "type": "address"
                         },
-                        "children": [
-                          {
-                            "attributes": {
-                              "name": "uint",
-                              "type": "uint256"
-                            },
-                            "id": 156,
-                            "name": "ElementaryTypeName",
-                            "src": "1265:4:0"
-                          }
-                        ],
                         "id": 141,
                         "name": "ElementaryTypeName",
                         "src": "1105:7:1"
@@ -4139,33 +1757,19 @@
               {
                 "children": [
                   {
+                    "attributes": {
+                      "functionReturnParameters": 151
+                    },
                     "children": [
                       {
                         "attributes": {
                           "argumentTypes": null,
                           "isConstant": false,
+                          "isInlineArray": false,
                           "isLValue": false,
                           "isPure": false,
-                          "isStructConstructorCall": false,
                           "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple(address,string storage ref,string storage ref,string storage ref,uint256)",
-                          "type_conversion": false,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 58,
-                          "value": null,
-                          "isInlineArray": false,
-                          "constant": false,
-                          "name": "num",
-                          "scope": 170,
-                          "stateVariable": false,
-                          "storageLocation": "default",
-                          "typeName": null,
-                          "visibility": "internal"
+                          "type": "tuple(address,string storage ref,string storage ref,string storage ref,uint256)"
                         },
                         "children": [
                           {
@@ -4177,30 +1781,18 @@
                               "lValueRequested": false,
                               "member_name": "addr",
                               "referencedDeclaration": 60,
-                              "type": "address",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "value": "totalProjects"
+                              "type": "address"
                             },
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 196,
-                                  "type": "struct FundEth.Project storage ref",
-                                  "value": "msg",
                                   "isConstant": false,
                                   "isLValue": true,
                                   "isPure": false,
-                                  "lValueRequested": false
+                                  "lValueRequested": false,
+                                  "type": "struct FundEth.Project storage ref"
                                 },
-                                "id": 154,
-                                "name": "IndexAccess",
-                                "src": "1158:19:1",
                                 "children": [
                                   {
                                     "attributes": {
@@ -4230,7 +1822,10 @@
                                     "name": "Identifier",
                                     "src": "1167:9:1"
                                   }
-                                ]
+                                ],
+                                "id": 154,
+                                "name": "IndexAccess",
+                                "src": "1158:19:1"
                               }
                             ],
                             "id": 155,
@@ -4240,39 +1835,24 @@
                           {
                             "attributes": {
                               "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 62,
-                              "type": "string storage ref",
-                              "value": "totalProjects",
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
-                              "member_name": "name"
+                              "member_name": "name",
+                              "referencedDeclaration": 62,
+                              "type": "string storage ref"
                             },
-                            "id": 159,
-                            "name": "MemberAccess",
-                            "src": "1184:24:1",
                             "children": [
                               {
                                 "attributes": {
                                   "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 196,
-                                  "type": "struct FundEth.Project storage ref",
-                                  "value": "msg",
                                   "isConstant": false,
                                   "isLValue": true,
                                   "isPure": false,
-                                  "lValueRequested": false
+                                  "lValueRequested": false,
+                                  "type": "struct FundEth.Project storage ref"
                                 },
-                                "id": 158,
-                                "name": "IndexAccess",
-                                "src": "1184:19:1",
                                 "children": [
                                   {
                                     "attributes": {
@@ -4302,9 +1882,15 @@
                                     "name": "Identifier",
                                     "src": "1193:9:1"
                                   }
-                                ]
+                                ],
+                                "id": 158,
+                                "name": "IndexAccess",
+                                "src": "1184:19:1"
                               }
-                            ]
+                            ],
+                            "id": 159,
+                            "name": "MemberAccess",
+                            "src": "1184:24:1"
                           },
                           {
                             "attributes": {
@@ -4490,109 +2076,11 @@
                         "id": 172,
                         "name": "TupleExpression",
                         "src": "1157:141:1"
-                      },
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "overloadedDeclarations": [
-                            null
-                          ],
-                          "referencedDeclaration": 58,
-                          "type": "uint256",
-                          "value": "totalProjects"
-                        },
-                        "id": 162,
-                        "name": "Identifier",
-                        "src": "1293:13:0"
                       }
                     ],
                     "id": 173,
                     "name": "Return",
-                    "src": "1150:148:1",
-                    "attributes": {
-                      "functionReturnParameters": 151,
-                      "assignments": [
-                        161
-                      ]
-                    }
-                  },
-                  {
-                    "attributes": {
-                      "functionReturnParameters": 160
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isInlineArray": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "type": "tuple(address,int_const 1000)"
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "sender",
-                              "referencedDeclaration": null,
-                              "type": "address"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 199,
-                                  "type": "msg",
-                                  "value": "msg"
-                                },
-                                "id": 164,
-                                "name": "Identifier",
-                                "src": "1320:3:0"
-                              }
-                            ],
-                            "id": 165,
-                            "name": "MemberAccess",
-                            "src": "1320:10:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 161,
-                              "type": "int_const 1000",
-                              "value": "1000",
-                              "hexvalue": "31303030",
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": true,
-                              "lValueRequested": false,
-                              "subdenomination": null,
-                              "token": "number"
-                            },
-                            "id": 166,
-                            "name": "Literal",
-                            "src": "1332:4:0"
-                          }
-                        ],
-                        "id": 167,
-                        "name": "TupleExpression",
-                        "src": "1319:18:0"
-                      }
-                    ],
-                    "id": 168,
-                    "name": "Return",
-                    "src": "1312:25:0"
+                    "src": "1150:148:1"
                   }
                 ],
                 "id": 174,
@@ -4621,94 +2109,15 @@
             },
             "children": [
               {
-                "children": [
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "receiver",
-                      "scope": 172,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "address",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "address",
-                          "type": "address"
-                        },
-                        "id": 159,
-                        "name": "ElementaryTypeName",
-                        "src": "1276:7:0"
-                      }
-                    ],
-                    "id": 160,
-                    "name": "VariableDeclaration",
-                    "src": "1276:16:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "amt",
-                      "scope": 172,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 161,
-                        "name": "ElementaryTypeName",
-                        "src": "1294:4:0"
-                      }
-                    ],
-                    "id": 162,
-                    "name": "VariableDeclaration",
-                    "src": "1294:8:0"
-                  },
-                  {
-                    "attributes": {
-                      "constant": false,
-                      "name": "amt",
-                      "scope": 186,
-                      "stateVariable": false,
-                      "storageLocation": "default",
-                      "type": "uint256",
-                      "value": null,
-                      "visibility": "internal"
-                    },
-                    "children": [
-                      {
-                        "attributes": {
-                          "name": "uint",
-                          "type": "uint256"
-                        },
-                        "id": 175,
-                        "name": "ElementaryTypeName",
-                        "src": "1407:4:0"
-                      }
-                    ],
-                    "id": 176,
-                    "name": "VariableDeclaration",
-                    "src": "1407:8:0"
-                  }
-                ],
-                "id": 176,
-                "name": "ParameterList",
-                "src": "1335:2:1",
                 "attributes": {
                   "parameters": [
                     null
                   ]
-                }
+                },
+                "children": [],
+                "id": 176,
+                "name": "ParameterList",
+                "src": "1335:2:1"
               },
               {
                 "attributes": {
@@ -4722,97 +2131,15 @@
                 "src": "1345:0:1"
               },
               {
-                "children": [
-                  {
-                    "children": [
-                      {
-                        "attributes": {
-                          "argumentTypes": null,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "isStructConstructorCall": false,
-                          "lValueRequested": false,
-                          "names": [
-                            null
-                          ],
-                          "type": "tuple()",
-                          "type_conversion": false
-                        },
-                        "children": [
-                          {
-                            "attributes": {
-                              "argumentTypes": [
-                                {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                }
-                              ],
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "member_name": "transfer",
-                              "referencedDeclaration": null,
-                              "type": "function (uint256)",
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "value": "ProjectNumber"
-                            },
-                            "children": [
-                              {
-                                "attributes": {
-                                  "argumentTypes": null,
-                                  "overloadedDeclarations": [
-                                    null
-                                  ],
-                                  "referencedDeclaration": 160,
-                                  "type": "address",
-                                  "value": "receiver"
-                                },
-                                "id": 165,
-                                "name": "Identifier",
-                                "src": "1325:8:0"
-                              }
-                            ],
-                            "id": 167,
-                            "name": "MemberAccess",
-                            "src": "1325:17:0"
-                          },
-                          {
-                            "attributes": {
-                              "argumentTypes": null,
-                              "overloadedDeclarations": [
-                                null
-                              ],
-                              "referencedDeclaration": 162,
-                              "type": "uint256",
-                              "value": "amt"
-                            },
-                            "id": 168,
-                            "name": "Identifier",
-                            "src": "1343:3:0"
-                          }
-                        ],
-                        "id": 169,
-                        "name": "FunctionCall",
-                        "src": "1325:22:0"
-                      }
-                    ],
-                    "id": 170,
-                    "name": "ExpressionStatement",
-                    "src": "1325:22:0"
-                  }
-                ],
-                "id": 178,
-                "name": "Block",
-                "src": "1345:8:1",
                 "attributes": {
                   "statements": [
                     null
                   ]
-                }
+                },
+                "children": [],
+                "id": 178,
+                "name": "Block",
+                "src": "1345:8:1"
               }
             ],
             "id": 179,
@@ -5010,5 +2337,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-14T01:47:32.537Z"
+  "updatedAt": "2017-12-14T17:28:13.573Z"
 }

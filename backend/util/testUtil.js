@@ -8,58 +8,75 @@ var FundEth = contract(fundeth_artifacts);
 var accounts;
 var account;
 
-
+var projects = {};
 
 export const start = () => {
-    var self = this;
+  var self = this;
 
-    // Bootstrap the MetaCoin abstraction for use.
-    FundEth.setProvider(web3.currentProvider);
+  // Bootstrap the MetaCoin abstraction for use.
+  FundEth.setProvider(web3.currentProvider);
 
-    // Get the initial account balanceso it can be displayed
-    web3.eth.getAccounts((err, accs) => {
-      if (err != null) {
-        alert('There was an error fetching your accounts.');
-        return;
-      }
-
-      if (accs.length == 0) {
-        alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly");
-        return;
-      }
-
-      accounts = accs;
-      account = accounts[0];
-    });
-  };
-
-export const deployInstance = () => {
-    FundEth.deployed().then(instance => {
-      console.log(instance);
-      return instance;
-    });
-  };
-
-export const deployPromise = (id) => {
-    deployInstance().getProject(id, { from: account }).then(project => {
-      return project;
-    });
-  };
-
-export const getProject = (id) => {
-    var project = deployPromise(id);
-    if (project[0] !== "0x0000000000000000000000000000000000000000") {
-      var pojo = {
-        id: id,
-        address: project[0],
-        name: project[1],
-        image_url: project[2],
-        description: project[3],
-        amt_raised: project[4].toNumber()
-      };
-      return pojo;
+  // Get the initial account balanceso it can be displayed
+  web3.eth.getAccounts((err, accs) => {
+    if (err != null) {
+      alert('There was an error fetching your accounts.');
+      return;
     }
-  };
+
+    if (accs.length == 0) {
+      alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly");
+      return;
+    }
+
+    accounts = accs;
+    account = accounts[0];
+  });
+};
+
+const deployInstance = () => {
+  var instance = FundEth.deployed();
+  return instance;
+};
+
+const deployPromise = async (id) => {
+  var instance = await deployInstance();
+
+  return instance.getProject(id, { from: account });
+};
+
+export const getProject = async (id) => {
+  var project = await deployPromise(id);
+  if (project[0] !== "0x0000000000000000000000000000000000000000") {
+    var pojo = {
+      id: id,
+      address: project[0],
+      name: project[1],
+      image_url: project[2],
+      description: project[3],
+      amt_raised: project[4].toNumber()
+    };
+    return pojo;
+  }
+};
+
+export const fetchProjects = () => {
+  var i = 1;
+  while (i < 20) {
+    getProject(i).then(response => {
+      projects[i] = response;
+      console.log(projects);
+    })
+
+    i++
+  }
+};
+
+export const getProjects = async () => {
+  var fetches = await fetchProjects();
+
+  return projects;
+};
+
 
 export const createProject = (name, description, imageUrl) => {
   return FundEth.deployed();

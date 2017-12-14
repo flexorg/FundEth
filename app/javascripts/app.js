@@ -45,35 +45,27 @@ window.App = {
     });
   },
 
+  callback: function(obj) {
+    return obj;
+  },
 
   getProject: function(id){
-    var pojo = {};
     FundEth.deployed().then((instance) => {
       console.log(instance);
       let fundEthInstance = instance;
       fundEthInstance.getProject(id, {from: account}).then( project => {
         if (project[0] !== "0x0000000000000000000000000000000000000000") {
-          // window.projects[id] = {
-          //   id: id,
-          //   address: project[0],
-          //   name: project[1],
-          //   image_url: project[2],
-          //   description: project[3],
-          //   amt_raised: project[4].toNumber()
-          // };
-          pojo = {
+          var pojo = {
             id: id,
             address: project[0],
             name: project[1],
             image_url: project[2],
             description: project[3],
             amt_raised: project[4].toNumber()
-          }
+          };
         }
       });
     });
-    console.log(pojo);
-    return pojo;
   }
 };
 
@@ -93,21 +85,21 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  ProjectUtil.start();
-  console.log();
-  console.log(ProjectUtil);
-
+  App.start();
   window.testStart = function () {
     App.createProject("test", "I am a test", "google.com");
   };
 
   window.projects = {};
 
+  window.callback = App.callback;
   window.testGet = function () {
-    App.getProject(3);
+    App.getProject(3, window.callback);
   };
 
 
+  ProjectUtil.start();
   window.getProject = ProjectUtil.getProject;
-  window.start = ProjectUtil.start;
+  window.getProjects = ProjectUtil.getProjects;
+  window.fetchProjects = ProjectUtil.fetchProjects;
 });
