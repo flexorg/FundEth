@@ -2,8 +2,8 @@
 // import { default as contract } from 'truffle-contract';
 // import * as Web3Util from '../../backend/util/web3Util';
 import * as ProjectUtil from '../../backend/util/projectUtil';
-//
-//
+// TESTING PURPOSES
+// =================================================================
 // import fundeth_artifacts from '../../build/contracts/FundEth.json';
 // var FundEth = contract(fundeth_artifacts);
 //
@@ -51,7 +51,7 @@ import * as ProjectUtil from '../../backend/util/projectUtil';
 //       let fundEthInstance = instance;
 //       fundEthInstance.getProject(id, {from: account}).then( project => {
 //         if (project[0] !== "0x0000000000000000000000000000000000000000") {
-//           var pojo = {
+//           window.projects[id] = {
 //             id: id,
 //             address: project[0],
 //             name: project[1],
@@ -66,6 +66,7 @@ import * as ProjectUtil from '../../backend/util/projectUtil';
 // };
 
 //null account = "0x0000000000000000000000000000000000000000"
+// ===========================================================================
 
 // Event listener for testing purposes, will be handled by util and entryfile
 window.addEventListener('load', function() {
