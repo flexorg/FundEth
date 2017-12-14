@@ -57,13 +57,17 @@ contract FundEth is mortal {
   function getProject(uint projectId) view public returns (address, string, string, string, uint){
     return (projects[projectId].addr, projects[projectId].name, projects[projectId].imageUrl, projects[projectId].description, projects[projectId].amt );
   }
+  function donateToProject(uint projectId, uint amount) payable returns (bool, address){
+    projects[projectId].amt += amount;
+    var addr = projects[projectId].addr;
+    return (true, addr);
+  }
 
-  function numberOfProjects() public {
+
+
+  function () public {
 
   }
 
 
-  function DonateToProject(address receiver, uint amt) payable public {
-    receiver.transfer(amt);
   }
-}

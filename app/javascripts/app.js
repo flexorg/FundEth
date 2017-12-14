@@ -45,6 +45,14 @@ window.App = {
     });
   },
 
+  donateToProject: function(projectId, amount){
+
+    FundEth.deployed().then( function (instance) {
+      let fundEthInstance = instance;
+      fundEthInstance.donateToProject(projectId, amount, {from: account});
+    });
+  },
+
 
   getProject: function(id){
     FundEth.deployed().then((instance) => {
@@ -70,7 +78,7 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
+    console.warn("Using web3 detected from external source. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     // Use Mist/MetaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
@@ -90,4 +98,10 @@ window.addEventListener('load', function() {
   window.testGet = function () {
     App.getProject(3);
   };
+
+  window.testDonate = function (){
+    App.donateToProject(3,500);
+  };
+
+
 });
