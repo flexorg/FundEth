@@ -1,6 +1,6 @@
 import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract';
-
+import * as Web3Util from '../../backend/util/web3Util';
 
 
 
@@ -66,7 +66,9 @@ window.App = {
 };
 
 //null account = "0x0000000000000000000000000000000000000000"
+export default App;
 
+// Event listener for testing purposes, will be handled by util and entryfile
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/MetaMask)
   if (typeof web3 !== 'undefined') {
@@ -90,4 +92,10 @@ window.addEventListener('load', function() {
   window.testGet = function () {
     App.getProject(3);
   };
+
+  console.log(FundEth);
+
+  window.createProject = Web3Util.createProject;
+  window.getProjects = Web3Util.getProjects;
+  window.getProject = Web3Util.getProject;
 });
