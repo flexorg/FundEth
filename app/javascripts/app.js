@@ -1,7 +1,7 @@
 import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract';
-import * as Web3Util from '../../backend/util/web3Util';
-
+// import * as Web3Util from '../../backend/util/web3Util';
+import * as ProjectUtil from '../../backend/util/testUtil';
 
 
 import fundeth_artifacts from '../../build/contracts/FundEth.json';
@@ -47,31 +47,33 @@ window.App = {
 
 
   getProject: function(id){
+    var pojo = {};
     FundEth.deployed().then((instance) => {
+      console.log(instance);
       let fundEthInstance = instance;
-      console.log(fundEthInstance);
       fundEthInstance.getProject(id, {from: account}).then( project => {
         if (project[0] !== "0x0000000000000000000000000000000000000000") {
-          window.projects[id] = {
-            id: id,
-            address: project[0],
-            name: project[1],
-            image_url: project[2],
-            description: project[3],
-            amt_raised: project[4].toNumber()
-          };
-          // var pojo = {
+          // window.projects[id] = {
           //   id: id,
           //   address: project[0],
           //   name: project[1],
           //   image_url: project[2],
           //   description: project[3],
           //   amt_raised: project[4].toNumber()
-          // }
-          // return pojo;
+          // };
+          pojo = {
+            id: id,
+            address: project[0],
+            name: project[1],
+            image_url: project[2],
+            description: project[3],
+            amt_raised: project[4].toNumber()
+          }
         }
       });
     });
+    console.log(pojo);
+    return pojo;
   }
 };
 
@@ -91,7 +93,9 @@ window.addEventListener('load', function() {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  App.start();
+  ProjectUtil.start();
+  console.log();
+  console.log(ProjectUtil);
 
   window.testStart = function () {
     App.createProject("test", "I am a test", "google.com");
@@ -103,9 +107,7 @@ window.addEventListener('load', function() {
     App.getProject(3);
   };
 
-  // console.log(FundEth);
 
-  window.createProject = Web3Util.createProject;
-  window.getProjects = Web3Util.getProjects;
-  window.getProject = Web3Util.getProject;
+  window.getProject = ProjectUtil.getProject;
+  window.start = ProjectUtil.start;
 });
