@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
 
-  ProjectUtil.start();
+  ProjectUtil.start(window.web3);
   window.getProject = ProjectUtil.getProject;
   window.getProjects = ProjectUtil.getProjects;
   window.createProject = ProjectUtil.createProject;
