@@ -23,14 +23,14 @@ module.exports = {
     loaders: [
       { test: /\.json$/, use: 'json-loader' },
       {
-        test: /\.js$/,
+        test: [/\.jsx?$/, /\.js?$/],
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015'],
+          presets: ['es2015', 'react'],
           plugins: ['transform-runtime']
         }
       }
     ]
   }
-}
+};
