@@ -47,9 +47,9 @@ window.App = {
 
   donateToProject: function(projectId, amount){
 
-    FundEth.deployed().then( function (instance) {
+    FundEth.deployed().then( (instance) => {
       let fundEthInstance = instance;
-      fundEthInstance.donateToProject(projectId, amount, {from: account});
+      fundEthInstance.donateToProject(projectId, amount, {from: account, value: amount});
     });
   },
 
