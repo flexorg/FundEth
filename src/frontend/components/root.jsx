@@ -19,9 +19,10 @@ const Root = () => (
   <div className="outer-main-container">
     <NavBar />
     <Switch>
-      <Route path="/" component={ProjectsIndexContainer} />
       <Route path="/projects/new" component={ProjectFormContainer} />
+      <Route path="/projects" component={ProjectsIndexContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
+      <Route path="/" component={ProjectsIndexContainer} />
     </Switch>
   </div>
 );

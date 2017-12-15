@@ -346,6 +346,10 @@ body {
   justify-content: flex-start;
 }
 
+.project-item-title-link {
+  text-decoration: none;
+}
+
 .project-item-title {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 // props:
 // this.props.project: JSON of projects data which includes id, title,
@@ -16,19 +17,22 @@ class ProjectIndexItem extends React.Component {
       <div className="project-item-container">
 
         <div className="project-item-info">
-          <div className="project-item-title">
-            {project.title}
-          </div>
-
+          <Link to={`/projects/${project.id}`} className="project-item-title-link">
+            <div className="project-item-title">
+              {project.title}
+            </div>
+          </Link>
           <div className="project-item-description">
             {project.description}
           </div>
         </div>
 
         <div className="project-item-image-container">
-          <img src={project.imageUrl}
-            className="project-item-image"
-          ></img>
+          <Link to={`/projects/${project.id}`} className="project-item-title-link">
+            <img src={project.imageUrl}
+              className="project-item-image"
+            ></img>
+          </Link>
         </div>
 
       </div>

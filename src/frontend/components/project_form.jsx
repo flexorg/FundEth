@@ -40,7 +40,8 @@ class ProjectForm extends React.Component {
         this.state.imageUrl === "") {
       this.setState({showErrors:true});
     } else {
-      console.log("Submit placeholder");
+      this.props.createProject(this.state.title, this.state.description, this.state.imageUrl)
+      .then(this.props.history.push("/projects"));
     }
   }
 
