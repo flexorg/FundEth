@@ -85,4 +85,5 @@ window.addEventListener('load', function() {
   window.getProject = ProjectUtil.getProject;
   window.getProjects = ProjectUtil.getProjects;
   window.createProject = ProjectUtil.createProject;
+  window.donateToProject = ProjectUtil.donateToProject;
 });
