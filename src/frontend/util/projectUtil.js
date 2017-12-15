@@ -10,11 +10,11 @@ var account;
 
 var projects = {};
 
-export const start = () => {
+export const start = (web3) => {
   var self = this;
 
   // explicitly define web 3 provider to avoid compile errors
-  var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
   // Bootstrap the MetaCoin abstraction for use.
   FundEth.setProvider(web3.currentProvider);
 
@@ -85,6 +85,6 @@ export const getProjects = async () => {
 export const createProject = async (name, description, imageUrl) => {
   var project = await deployInstance();
 
-  project.CreateProject(name, description, imageUrl, { from: account });
+  project.CreateProject(name, description, imageUrl, { from: account, gas: 150000 });
   return true;
 };
