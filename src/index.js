@@ -2,6 +2,7 @@ import { default as Web3 } from 'web3';
 // import { default as contract } from 'truffle-contract';
 // import * as Web3Util from '../../backend/util/web3Util';
 import * as ProjectUtil from './frontend/util/projectUtil';
+import { requestProjects } from './frontend/actions/project_actions';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RootApp from './frontend/components/root_app';
@@ -109,8 +110,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getProjects = ProjectUtil.getProjects;
   window.createProject = ProjectUtil.createProject;
 
+  window.requestProjects = requestProjects;
+
   // react-redux
   let store = configureStore();
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   const root = document.getElementById('root');
   ReactDOM.render(<RootApp store={store}/>, root);
 });

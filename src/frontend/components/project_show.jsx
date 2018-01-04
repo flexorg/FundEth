@@ -34,11 +34,11 @@ class ProjectShow extends React.Component {
 
           <div className="project-show-header">
             <div className="project-show-title">
-              {project.title}
+              {project.name}
             </div>
             <div className="project-show-amount-container">
               <div className="project-show-amount">
-                {`${project.amount} ETH`}
+                {`${project.amt_raised} ETH`}
               </div>
               <div className="project-show-amount-tag">
                 Amount raised

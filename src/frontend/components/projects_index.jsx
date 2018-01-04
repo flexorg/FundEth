@@ -22,6 +22,13 @@ import { Link } from 'react-router-dom';
 class ProjectsIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      projects:{}
+    };
+  }
+
+  componentWillMount() {
+    this.props.requestProjects();
   }
 
   componentDidMount() {
@@ -29,15 +36,14 @@ class ProjectsIndex extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.match.url !== this.props.match.url) {
-      this.props.requestProjects();
-    }
+    // if (this.state.projects != newProps.projects) {
+    //   this.setState({projects: newProps.projects});
+    // }
   }
 
   render() {
-    if (this.props.projects) {
-      const projectsArr = this.props.projects;
-      
+    if (Object.values(this.state.projects).length !== 0) {
+      const projectsArr = Object.values(this.state.projects);
       return(
         <div className="projects-index-container">
 
@@ -68,6 +74,7 @@ class ProjectsIndex extends React.Component {
         </div>
       );
     } else {
+      console.log("shit broke");
       return null;
     }
   }

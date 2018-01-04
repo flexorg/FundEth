@@ -11,15 +11,15 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610112806100536000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b3415604e57600080fd5b60546056565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e4576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a72305820c71c9edac80ef48748a4a18db948cb1494f4249ffb99c78b787416bbf60024da0029",
-  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b3415604e57600080fd5b60546056565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e4576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a72305820c71c9edac80ef48748a4a18db948cb1494f4249ffb99c78b787416bbf60024da0029",
+  "bytecode": "0x6060604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610112806100536000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b3415604e57600080fd5b60546056565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e4576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a723058205e379946a5f21658889df49826a6f7561f04e43317b9de63a39d59966343fc880029",
+  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806341c0e1b5146044575b600080fd5b3415604e57600080fd5b60546056565b005b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16141560e4576000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b5600a165627a7a723058205e379946a5f21658889df49826a6f7561f04e43317b9de63a39d59966343fc880029",
   "sourceMap": "224:131:1:-;;;203:10;195:5;;:18;;;;;;;;;;;;;;;;;;224:131;;;;;;",
   "deployedSourceMap": "224:131:1:-;;;;;;;;;;;;;;;;;;;;;;;;255:96;;;;;;;;;;;;;;;306:5;;;;;;;;;;;292:19;;:10;:19;;;288:56;;;338:5;;;;;;;;;;;325:19;;;288:56;255:96::o",
   "source": "pragma solidity ^0.4.2;\n\n\ncontract owned {\n    address owner;\n\n    modifier onlyowner() {\n        if (msg.sender == owner) {\n            _;\n        }\n    }\n\n    function owned() public {\n        owner = msg.sender;\n    }\n}\n\ncontract mortal is owned {\n    function kill() public {\n        if (msg.sender == owner)\n            selfdestruct(owner);\n    }\n  }\n\n\n\n\ncontract FundEth is mortal {\n\n  struct Project {\n    address addr;\n    string name;\n    string imageUrl;\n    string description;\n    uint amt;\n  }\n\n  event ProjectNumber(uint _value);\n\n\n  mapping ( uint => Project ) projects;\n  uint public totalProjects;\n  uint[] public projectIds;\n\n  function CreateProject(string name,string description, string imageUrl) payable public {\n    totalProjects++;\n    var project = projects[totalProjects];\n    projectIds.push(totalProjects);\n\n    project.addr = msg.sender;\n    project.name = name;\n    project.description = description;\n    project.imageUrl = imageUrl;\n    project.amt = 0;\n  }\n\n  function getProject(uint projectId) view public returns (address, string, string, string, uint){\n    return (projects[projectId].addr, projects[projectId].name, projects[projectId].imageUrl, projects[projectId].description, projects[projectId].amt );\n  }\n\n  function numberOfProjects() public {\n\n  }\n\n\n  function DonateToProject(address receiver, uint amt) payable public {\n    receiver.transfer(amt);\n  }\n}\n",
-  "sourcePath": "/Users/jonathanray/Documents/testing/FundEth/contracts/FundEth.sol",
+  "sourcePath": "/home/bo/Desktop/flex_project/truffle_box/contracts/FundEth.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/Users/jonathanray/Documents/testing/FundEth/contracts/FundEth.sol",
+      "absolutePath": "/home/bo/Desktop/flex_project/truffle_box/contracts/FundEth.sol",
       "exportedSymbols": {
         "FundEth": [
           194
@@ -2337,5 +2337,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2017-12-15T18:54:51.290Z"
+  "updatedAt": "2018-01-04T19:13:39.319Z"
 }

@@ -32,6 +32,7 @@ export const start = (web3) => {
 
     accounts = accs;
     account = accounts[0];
+    console.log(accounts);
   });
 };
 
@@ -85,6 +86,6 @@ export const getProjects = async () => {
 export const createProject = async (name, description, imageUrl) => {
   var project = await deployInstance();
 
-  project.CreateProject(name, description, imageUrl, { from: account, gas: 150000 });
+  project.CreateProject(name, description, imageUrl, { from: account, gas: 200000 });
   return true;
 };

@@ -19,7 +19,7 @@ class ProjectIndexItem extends React.Component {
         <div className="project-item-info">
           <Link to={`/projects/${project.id}`} className="project-item-title-link">
             <div className="project-item-title">
-              {project.title}
+              {project.name}
             </div>
           </Link>
           <div className="project-item-description">
