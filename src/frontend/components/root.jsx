@@ -18,12 +18,10 @@ import ProjectShowContainer from './project_show_container';
 const Root = () => (
   <div className="outer-main-container">
     <NavBar />
-    <Switch>
-      <Route path="/projects/new" component={ProjectFormContainer} />
-      <Route path="/projects" component={ProjectsIndexContainer} />
+      <Route exact path="/projects/new" component={ProjectFormContainer} />
+      <Route exact path="/projects" component={ProjectsIndexContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
-      <Route path="/" component={ProjectsIndexContainer} />
-    </Switch>
+      <Route exact path="/" component={ProjectsIndexContainer} />
   </div>
 );
 

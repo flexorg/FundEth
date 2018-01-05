@@ -8,15 +8,15 @@
       "type": "constructor"
     }
   ],
-  "bytecode": "0x60606040523415600e57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603580605b6000396000f3006060604052600080fd00a165627a7a723058203c78ac8e6cea07edf7edcaf1028853d63f2d6d0f317dbfe62d63c61b93876c550029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058203c78ac8e6cea07edf7edcaf1028853d63f2d6d0f317dbfe62d63c61b93876c550029",
+  "bytecode": "0x60606040523415600e57600080fd5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603580605b6000396000f3006060604052600080fd00a165627a7a72305820199855bf5fe0ea1889a08cebc45da2f6ca58985cf430036f4e1ef9cdd1100a760029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820199855bf5fe0ea1889a08cebc45da2f6ca58985cf430036f4e1ef9cdd1100a760029",
   "sourceMap": "26:196:1:-;;;161:59;;;;;;;;203:10;195:5;;:18;;;;;;;;;;;;;;;;;;26:196;;;;;;",
   "deployedSourceMap": "26:196:1:-;;;;;",
   "source": "pragma solidity ^0.4.2;\n\n\ncontract owned {\n    address owner;\n\n    modifier onlyowner() {\n        if (msg.sender == owner) {\n            _;\n        }\n    }\n\n    function owned() public {\n        owner = msg.sender;\n    }\n}\n\ncontract mortal is owned {\n    function kill() public {\n        if (msg.sender == owner)\n            selfdestruct(owner);\n    }\n  }\n\n\n\n\ncontract FundEth is mortal {\n\n  struct Project {\n    address addr;\n    string name;\n    string imageUrl;\n    string description;\n    uint amt;\n  }\n\n  event ProjectNumber(uint _value);\n\n\n  mapping ( uint => Project ) projects;\n  uint public totalProjects;\n  uint[] public projectIds;\n\n  function CreateProject(string name,string description, string imageUrl) payable public {\n    totalProjects++;\n    var project = projects[totalProjects];\n    projectIds.push(totalProjects);\n\n    project.addr = msg.sender;\n    project.name = name;\n    project.description = description;\n    project.imageUrl = imageUrl;\n    project.amt = 0;\n  }\n\n  function getProject(uint projectId) view public returns (address, string, string, string, uint){\n    return (projects[projectId].addr, projects[projectId].name, projects[projectId].imageUrl, projects[projectId].description, projects[projectId].amt );\n  }\n\n  function numberOfProjects() public {\n\n  }\n\n\n  function DonateToProject(address receiver, uint amt) payable public {\n    receiver.transfer(amt);\n  }\n}\n",
-  "sourcePath": "/home/bo/Desktop/flex_project/truffle_box/contracts/FundEth.sol",
+  "sourcePath": "/Users/jonathanray/Documents/async/FundEth/contracts/FundEth.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/bo/Desktop/flex_project/truffle_box/contracts/FundEth.sol",
+      "absolutePath": "/Users/jonathanray/Documents/async/FundEth/contracts/FundEth.sol",
       "exportedSymbols": {
         "FundEth": [
           194
@@ -2334,5 +2334,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-04T19:13:39.322Z"
+  "updatedAt": "2018-01-05T00:41:17.327Z"
 }

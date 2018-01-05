@@ -33,12 +33,14 @@ class ProjectsIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestProjects();
+
+    window.setTimeout(() => this.props.requestProjects(), 1500)
   }
 
   componentWillReceiveProps(newProps) {
-    // if (this.state.projects != newProps.projects) {
-    //   this.setState({projects: newProps.projects});
-    // }
+    if (this.state.projects !== newProps.projects) {
+      this.setState({projects: newProps.projects});
+    }
   }
 
   render() {
