@@ -34,7 +34,7 @@ class ProjectsIndex extends React.Component {
   componentDidMount() {
     this.props.requestProjects();
 
-    window.setTimeout(() => this.props.requestProjects(), 1500)
+    window.setTimeout(() => this.props.requestProjects(), 1800)
   }
 
   componentWillReceiveProps(newProps) {
