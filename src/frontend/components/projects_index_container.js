@@ -6,7 +6,6 @@ import ProjectsIndex from './projects_index';
 import values from 'lodash/values';
 
 const mapStateToProps = state => {
-  console.log(state.projects);
   return ({projects: state.projects,
           getProjects: getProjects});
 };

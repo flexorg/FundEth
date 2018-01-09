@@ -89,3 +89,9 @@ export const createProject = async (name, description, imageUrl) => {
   project.CreateProject(name, description, imageUrl, { from: account, gas: 500000 });
   return true;
 };
+
+export const donateToProject = async (projectId, amount) => {
+  var project = await deployInstance();
+  project.donateToProject(projectId, amount, { from: account, value: amount });
+  return true;
+};

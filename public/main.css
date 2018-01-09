@@ -450,3 +450,25 @@ body {
   justify-content: flex-end;
   margin-bottom: 25px;
 }
+
+.project-show-amount-input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  vertical-align: middle;
+  color: black;
+  min-height: 25px;
+  background: white;
+  width: 150px;
+  height: 40px;
+  padding-left: 8px;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  -webkit-transition: border 0.5s;
+  transition: border 0.5s;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
+.project-show-amount-input:focus {
+  border: 2px solid  #A9C5E6;
+}
