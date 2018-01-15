@@ -18,6 +18,14 @@ class NavBar extends React.Component {
         </div>
 
         <div className="nav-button-container">
+          <div className="project-index-button-container">
+            <Link className="project-create-link" to="/projects/new">
+              <button className="project-create-button">
+                <span>Create Project</span>
+              </button>
+            </Link>
+          </div>
+          
           <Link className="nav-button-link" to="/">
             <button className="nav-button">
               Projects

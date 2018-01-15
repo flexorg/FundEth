@@ -254,6 +254,8 @@ body {
 
 .nav-button-container {
   margin-right: 50px;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-button-link {

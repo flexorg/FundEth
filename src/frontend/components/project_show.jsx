@@ -22,7 +22,6 @@ class ProjectShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestProject(this.props.match.params.projectId)
   }
 
   componentWillReceiveProps(newProps) {

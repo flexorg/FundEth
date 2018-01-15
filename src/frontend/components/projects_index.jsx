@@ -28,13 +28,9 @@ class ProjectsIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestProjects();
   }
 
   componentDidMount() {
-    this.props.requestProjects();
-
-    window.setTimeout(() => this.props.requestProjects(), 1800)
   }
 
   componentWillReceiveProps(newProps) {
@@ -53,14 +49,6 @@ class ProjectsIndex extends React.Component {
             <div className="projects-index-header">
               Projects
             </div>
-
-            <div className="project-index-button-container">
-              <Link className="project-create-link" to="/projects/new">
-                <button className="project-create-button">
-                  <span>Create Project</span>
-                </button>
-              </Link>
-            </div>
           </div>
 
           <div className="projects-index-list-container">
@@ -76,7 +64,6 @@ class ProjectsIndex extends React.Component {
         </div>
       );
     } else {
-      console.log("shit broke");
       return null;
     }
   }

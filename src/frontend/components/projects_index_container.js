@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestProjects } from '../actions/project_actions';
-import { getProjects } from '../util/projectUtil';
+import { receiveProjects } from '../actions/project_actions';
 import ProjectsIndex from './projects_index';
-import values from 'lodash/values';
 
 const mapStateToProps = state => {
-  return ({projects: state.projects,
-          getProjects: getProjects});
+  return ({
+    projects: state.projects,
+    web3: state.web3});
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestProjects: () => dispatch(requestProjects())
+  receiveProjects: (projects) => dispatch(receiveProjects)
 });
 
 export default withRouter(connect(

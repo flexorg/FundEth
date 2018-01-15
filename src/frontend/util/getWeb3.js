@@ -1,10 +1,20 @@
 import Web3 from 'web3'
+import store from '../store/store.js';
+
+export const START_WEB3 = "START_WEB3"
+
+const startWeb3 = (results) => ({
+  type: START_WEB3,
+  web3: results.web3
+})
+
 
 let getWeb3 = new Promise(function(resolve, reject) {
   // Wait for loading completion to avoid race conditions with web3 injection timing.
   window.addEventListener('load', function() {
     var results
     var web3 = window.web3
+
 
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof web3 !== 'undefined') {
@@ -17,7 +27,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
 
       console.log('Injected web3 detected.');
 
-      resolve(results)
+      resolve(store.dispatch(startWeb3(results)))
     } else {
       // Fallback to localhost if no web3 injection. We've configured this to
       // use the development console's port by default.
