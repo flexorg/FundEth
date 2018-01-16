@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestProjects } from '../actions/project_actions';
+import { createProject } from '../util/projectUtil';
 import ProjectForm from './project_form';
 
 const mapStateToProps = state => ({
   projects: Object.values(state.projects),
-  web3: state.web3
+  web3: state.web3,
+  accounts: state.accounts
 });
 
 const mapDispatchToProps = dispatch => ({
+  createProject
 });
 
 export default withRouter(connect(

@@ -5,10 +5,6 @@ import { default as contract } from 'truffle-contract';
 
 // var FundEth = contract(fundeth_artifacts);
 
-var accounts;
-var account;
-
-var projects = {};
 
 // export const start = (web3) => {
 //   var self = this;
@@ -35,21 +31,23 @@ var projects = {};
 //
 //   });
 // };
+//
+// const deployInstance = () => {
+//   var contractInstance = window.MyContract.at("0xc3b083Fda43C81d037Be1739A72A5abd26e07A0B");
+//   return contractInstance;
+// };
 
-const deployInstance = () => {
-  var contractInstance = window.MyContract.at("0xc3b083Fda43C81d037Be1739A72A5abd26e07A0B");
-  return contractInstance;
-};
+// const deployPromise = async (id) => {
+//   var instance = await deployInstance();
+//   // This is the same as doing deployInstance().then(instance => {instance.getProject...})
+//
+//   return instance.getProject(id, { from: account });
+// };
 
-const deployPromise = async (id) => {
-  var instance = await deployInstance();
-  // This is the same as doing deployInstance().then(instance => {instance.getProject...})
+var projects = {};
 
-  return instance.getProject(id, { from: account });
-};
-
-export const getProject = async (id) => {
-  var project = await deployPromise(id);
+export const getProject = async (id, instance, account) => {
+  var project = await instance.getProject(id, { from: account });
   if (project[0] !== "0x0000000000000000000000000000000000000000") {
     var pojo = {
       id: id,
@@ -66,9 +64,10 @@ export const getProject = async (id) => {
 //null account = "0x0000000000000000000000000000000000000000"
 
 
-const fetchProjects = () => {
+const fetchProjects = (instance,account) => {
   for (var i = 1; i < 20; i++) {
-    getProject(i).then(response => {
+
+    getProject(i, instance).then(response => {
       if (response) {
         projects[response.id] = response;
       }
@@ -76,22 +75,18 @@ const fetchProjects = () => {
   }
 };
 
-export const getProjects = async () => {
-  var fetches = await fetchProjects();
-
+export const getProjects = async (instance, account) => {
+  var fetch = await fetchProjects(instance);
   return projects;
 };
 
 
-export const createProject = async (name, description, imageUrl) => {
-  var project = await deployInstance();
-
-  project.CreateProject(name, description, imageUrl, { from: account, gas: 500000 });
+export const createProject = async (name, description, imageUrl,instance, address) => {
+  instance.CreateProject(name, description, imageUrl, { from: address, gas: 500000 });
   return true;
 };
 
-export const donateToProject = async (projectId, amount) => {
-  var project = await deployInstance();
-  project.donateToProject(projectId, amount, { from: account, value: amount });
+export const donateToProject = async (projectId, amount, instance, account) => {
+  instance.donateToProject(projectId, amount, { from: account, value: amount });
   return true;
 };

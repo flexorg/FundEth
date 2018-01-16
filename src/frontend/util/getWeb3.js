@@ -8,18 +8,39 @@ const startWeb3 = (results) => ({
   web3: results.web3
 })
 
+const getAccounts = (accounts) => ({
+  type: "GET_ACCOUNTS",
+  accounts: accounts
+})
 
-let getWeb3 = new Promise(function(resolve, reject) {
+export const fetchAccounts = (web3) => {
+  web3.eth.getAccounts((err, accs) => {
+      if (err != null) {
+        alert('There was an error fetching your accounts.');
+        return;
+      }
+
+      if (accs.length == 0) {
+        alert("Couldn't get any accounts! Make sure your Ethereum client is configured correctly");
+        return;
+      }
+
+      store.dispatch(getAccounts(accs))
+    });
+}
+
+
+export const getWeb3 = new Promise(function(resolve, reject) {
   // Wait for loading completion to avoid race conditions with web3 injection timing.
   window.addEventListener('load', function() {
     var results
     var web3 = window.web3
 
-
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof web3 !== 'undefined') {
       // Use Mist/MetaMask's provider.
       web3 = new Web3(web3.currentProvider)
+
 
       results = {
         web3: web3
@@ -39,11 +60,11 @@ let getWeb3 = new Promise(function(resolve, reject) {
         web3: web3
       }
 
+
+
       console.log('No web3 instance injected, using Local web3.');
 
-      resolve(results)
+      resolve(store.dispatch(startWeb3(results)))
     }
   })
 })
-
-export default getWeb3

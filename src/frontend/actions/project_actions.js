@@ -13,12 +13,12 @@ export const receiveOneProject = project => ({
   project
 });
 
-export const requestProjects = () => dispatch => (
-  ProjectUtil.getProjects()
+export const requestProjects = (instance, account) => dispatch => (
+  ProjectUtil.getProjects(instance, account)
   .then(projects => dispatch(receiveProjects(projects)))
 );
 
-export const requestProject = id => dispatch => (
-  ProjectUtil.getProject(id)
+export const requestProject = (id, instance) => dispatch => (
+  ProjectUtil.getProject(id, instance)
   .then(project => dispatch(receiveOneProject(project)))
 );

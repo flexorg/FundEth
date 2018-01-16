@@ -2,13 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import Root from './root';
-import getWeb3 from '../util/getWeb3';
+import { fetchAccounts, getWeb3 } from '../util/getWeb3';
 class RootApp extends React.Component {
 
 constructor(props) {
   super(props);
   this.state = {
-    store: this.props.store
+    store: this.props.store,
+    web3: null
   }
 };
 
@@ -22,7 +23,7 @@ componentWillMount() {
       web3: results.web3
     })
 
-    // Instantiate contract once web3 provided.
+    fetchAccounts(results.web3)
 
   })
   .catch(() => {

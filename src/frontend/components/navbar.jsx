@@ -13,7 +13,7 @@ class NavBar extends React.Component {
 
         <div className="nav-header-container">
           <div className="nav-header">
-            FundEth
+          <strong>FundEth</strong> (Alpha)
           </div>
         </div>
 
@@ -25,7 +25,7 @@ class NavBar extends React.Component {
               </button>
             </Link>
           </div>
-          
+
           <Link className="nav-button-link" to="/">
             <button className="nav-button">
               Projects

@@ -46,8 +46,6 @@ class ProjectShow extends React.Component {
     if (this.state.amount === "") {
       this.setState({showErrors:true});
     } else {
-      console.log(this.props.project.id);
-      console.log(this.state.amount);
       this.props.donateToProject(this.props.project.id, this.state.amount)
       .then(this.props.history.push("/projects"));
     }

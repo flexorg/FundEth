@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ProjectIndexItem from './project_index_item';
 import { Link } from 'react-router-dom';
+import { default as contract } from 'truffle-contract';
+import fundeth_artifacts from '../../../build/contracts/FundEth.json';
+
+
 
 // // test projects data
 // var description1 = "Our local school needs supplies for the upcoming school year. We are looking for funds to purchase notebooks, writing utensils, and folders. Any help would be greatly appreciated by the students!";
@@ -23,19 +27,40 @@ class ProjectsIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects:{}
+      projects: {},
+      instance: null
     };
   }
 
-  componentWillMount() {
+  componentWillMount(){
+    this.handleContract()
   }
 
   componentDidMount() {
+    window.setTimeout(this.handleContract, 1500)
   }
+
+
+  handleContract(){
+    if (this.state.instance !== null) {
+      this.props.requestProjects(this.state.instance, this.props.accounts[0])
+    } else if (this.props.web3 !== null) {
+      var FundEth = contract(fundeth_artifacts);
+      FundEth.setProvider(this.props.web3.currentProvider);
+      FundEth.deployed().then((instance) => {
+        this.setState(instance: instance)
+        this.props.requestProjects(instance, this.props.accounts[0])
+      })
+    }
+  }
+
 
   componentWillReceiveProps(newProps) {
     if (this.state.projects !== newProps.projects) {
       this.setState({projects: newProps.projects});
+    } else if (newProps.web3 !== undefined) {
+      this.setState( {web3: newProps.web3})
+      this.handleContract()
     }
   }
 

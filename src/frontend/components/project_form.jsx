@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { default as contract } from 'truffle-contract';
+import fundeth_artifacts from '../../../build/contracts/FundEth.json'
 
 // props:
 // this.props.projects: all projects
@@ -20,7 +22,8 @@ class ProjectForm extends React.Component {
       // project image url
       imageUrl: "",
       // boolean indicating visibility of the errors icon
-      showErrors: false
+      showErrors: false,
+      instance: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -34,15 +37,34 @@ class ProjectForm extends React.Component {
                 };
   }
 
+
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.web3 !== undefined) {
+      this.setState( {web3: newProps.web3})
+
+    }
+  }
+
+
+
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.title === "" || this.state.description === "" ||
         this.state.imageUrl === "") {
       this.setState({showErrors:true});
     } else {
-      this.props.createProject(this.state.title, this.state.description, this.state.imageUrl)
-      .then(this.props.history.push("/projects"));
+
     }
+    if (this.props.web3 !== null) {
+      var FundEth = contract(fundeth_artifacts);
+      FundEth.setProvider(this.props.web3.currentProvider);
+      FundEth.deployed().then((instance) => {
+        instance.CreateProject(this.state.title, this.state.description, this.state.imageUrl, {from: this.props.accounts[0], gas: 500000 })
+        .then(this.props.history.push("/"));
+      })
+    }
+
   }
 
   render() {
