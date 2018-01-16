@@ -18,7 +18,7 @@ export const requestProjects = (instance, account) => dispatch => (
   .then(projects => dispatch(receiveProjects(projects)))
 );
 
-export const requestProject = (id, instance) => dispatch => (
+export const requestProject = (id, instance, account) => dispatch => (
   ProjectUtil.getProject(id, instance)
   .then(project => dispatch(receiveOneProject(project)))
 );

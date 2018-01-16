@@ -30,6 +30,8 @@ class ProjectsIndex extends React.Component {
       projects: {},
       instance: null
     };
+
+    this.handleContract = this.handleContract.bind(this)
   }
 
   componentWillMount(){

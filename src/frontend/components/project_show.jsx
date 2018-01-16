@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+import { default as contract } from 'truffle-contract';
+import fundeth_artifacts from '../../../build/contracts/FundEth.json';
 
 // props:
 // this.props.project: current project to showErrors
@@ -16,7 +18,8 @@ class ProjectShow extends React.Component {
       // amount to be donated
       amount: "",
       // boolean indicating visibility of the errors icon
-      showErrors: false
+      showErrors: false,
+      instance: null
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -28,9 +31,24 @@ class ProjectShow extends React.Component {
     // fetchs desired route if the new URL does not match the current URL
     // or if the passed down route is undefined
     if (newProps.match.url !== this.props.match.url || this.props.project === undefined) {
-      this.props.requestProject(newProps.match.params.projectId)
+
+      this.handleContract(newProps.match.params.projectId)
     }
   }
+
+  handleContract(id){
+    if (this.state.instance !== null) {
+        this.props.requestProject(id, instance, this.props.accounts[0])
+    } else if (this.props.web3 !== null) {
+      var FundEth = contract(fundeth_artifacts);
+      FundEth.setProvider(this.props.web3.currentProvider);
+      FundEth.deployed().then((instance) => {
+        this.setState(instance: instance)
+        this.props.requestProject(id, instance, this.props.accounts[0])
+      })
+    }
+  }
+
 
   // updates the state of the title based on input
   update(field) {
@@ -46,8 +64,13 @@ class ProjectShow extends React.Component {
     if (this.state.amount === "") {
       this.setState({showErrors:true});
     } else {
-      this.props.donateToProject(this.props.project.id, this.state.amount)
-      .then(this.props.history.push("/projects"));
+      var FundEth = contract(fundeth_artifacts);
+      FundEth.setProvider(this.props.web3.currentProvider);
+      FundEth.deployed().then((instance) => {
+        this.setState(instance: instance)
+        this.props.donateToProject(this.props.project.id, this.state.amount, instance, this.props.accounts[0])
+        .then(this.props.history.push("/"));
+      })
     }
   }
 
