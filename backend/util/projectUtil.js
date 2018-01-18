@@ -90,6 +90,6 @@ export const createProject = async (name, description, imageUrl) => {
 export const donateToProject = async (projectId, amount) => {
   var project = await deployInstance();
 
-  project.donateToProject(projectId, amount, { from: account, value: amount });
+  project.donateToProject(projectId, amount, { from: account, value: amount, gas: 500000 });
   return true;
 };
