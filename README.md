@@ -1,13 +1,11 @@
-# FundEth
-
+# <a href='fundeth.me'><img src='https://s3-us-west-1.amazonaws.com/loudfog/fundeth_placeholder.png' height='100'/></a>   FundEth
 FundEth is a web app that aims to have a completely anonymous and
 transparent crowdfunding process, all built on the Ethereum block
 chain network.
 
 ## Background and Overview
 
-By leveraging the Ethereum network, we can create a decentralized
-back end rather than a traditional backend that uses a centralized back end such as PostgreSQL.  The benefits of this include:
+By leveraging the Ethereum network, we can avoid a centralized backend such as PostgreSQL and instead use a decentralized backend.  The benefits of this include:
 
 * Security
   + The block chain structure inherently provides security as any attacks on a node leaves the other nodes in the network unchanged.  
@@ -24,37 +22,7 @@ back end rather than a traditional backend that uses a centralized back end such
   + Low fees
   + Easy cross-border payments
 
-## Smart Contracts
-
-At a high level, smart contracts are the self executing code that will be written in Solidity and hosted on the Ethereum network once live.  It will consist of the logic for generating projects and for distributing payments.  
-
-A project will essentially be creating a contract wallet with which users can donate to and the project owner can take from.  
-
-## MVP
-
-- [ ] Users will be able to generate projects
-- [ ] Users will be able to view projects (index and show)
-- [ ] Users will be able to donate to a project with Ethereum
-- [ ] The projects will monitor their own transaction history
-- [ ] Users will be able to see transaction history and total amount donated
-
-## Wireframes
-
-### Splash Page
-
-![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Splash%20Page.png "Splash Page")
-
-### Projects Index
-
-![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Projects%20Index.png "Projects Index")
-
-### Project Show
-
-![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Project%20Show.png "Project Show")
-
-### Project Form
-
-![alt text](https://raw.githubusercontent.com/flexorg/FundEth/Wireframes/wireframes/Project%20Form.png "Project Form")
+At the time of writing, Solidity is a relatively new language and as such, is always changing week by week.  Hopefully, this project will assist those also looking to delve into Solidity as well as block chain development
 
 ## Technologies and Technical Challenges
 
@@ -67,45 +35,12 @@ Solidity, JavaScript, Web3, React-Redux, Truffle, Geth, HTML5, CSS3, and Materia
 * Integrating the application using Web3 and MetaMask
 * Being able to store and retrieve data on the Ethereum block chain
 
-## Things we accomplished this weekend
+## Smart Contracts
 
-1. Both Jeff and Jon completed their introduction to Solidity and have a private block chain running for development and testing purposes
+At a high level, smart contracts are the self executing code that will be written in Solidity and hosted on the Ethereum network once live.  It will consist of the logic for generating projects and for distributing payments.  
 
-2. Bo created a React skeleton that integrates Truffle and Web3
+Smart contracts are written in .sol files which must be compiled and migrated, similar to migrating any backend changes in Rails. A common error that was encountered not only by us but by many others as well was the __BigNumber__ error.  After many days of struggling through documentation and just overall workarounds, we discovered that __removing the compiled files and having truffle compile everything from scratch again__ solved the error.
 
-3. All members researched the basic structures of block chain technology as well as become familiar with Truffle and Web3
+## Testing
 
-4. Started a skeleton for our project
-
-## Group Members & Work Breakdown
-
-Our group consists of three members, Jonathan Ray, Jeffery Ren, and Bo Pang.
-
-Jon and Jeff's primary responsibilities will be:
-- writing the smart contract in Solidity
-- testing the local development environment
-- integrating front end components with smart contracts via Web3
-- Deploying the smart contract onto the Ethereum block chain
-
-Bo's primary responsibilities will be:
-- creating React components for the front end
-- integrating Truffle and Web3 with React-Redux
-- solve routing limitations put in place by Truffle
-- UI/UX with HTML5 and CSS3
-
-## Implementation Timeline
-
-**Day 1:** Finish smart contract generation as well as making a form page for project creation
-
-**Day 2:** Integrate the form with smart contracts.  Create a show/index page for projects
-
-**Day 3:** Populate the projects with information and integrate them with the project show and index pages.  Style pages for easy navigation.
-
-**Day 4:** Create a styled splash page with gifs and videos as well as including instructions for usage and/or installation.  Close up any loose ends
-
-**Day 5:** Create a production README and final styling touches
-
-## Bonus features
-
-- [ ] Implement smart contracts that self terminate given a deadline
-- [ ] Potentially incorporate other cryptocurrencies for funding
+As the Ethereum block chain grows, the time needed to get a response also grows.  Thus, we needed to utilize testing suites to efficiently validate our code and our smart contracts.  The started with the Truffle testing suite.  A look at the repo showed many deprecations and an overall decline in updates.  However, block chain technology is still very new so we continued on with using Truffle.  We received many unexpected results with __asynchronicity__, especially when trying to integrate the Redux cycle.  Furthermore there was a created getweb3 API that we realized was needed to incorporate web3 methods with our projectUtil APIs.  We solved most of these issues with Promises and ES8 async/await.  
